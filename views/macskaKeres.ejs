@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macska keresés</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>id</th>
+            <th>Súly</th>
+            <th>Szem szín</th>
+            <th>Gazdi id</th>
+            <th>Játék id</th>
+        </thead>
+        <tbody>
+            <% for(const m of eredmeny) { %>
+                <tr>
+                    <td>
+                        <%= m.id %>
+                    </td>
+                    <td>
+                        <%= m.suly %>
+                    </td>
+                    <td>
+                        <%= m.szem_szin %>
+                    </td>
+                    <td>
+                        <%= m.gazdi_id %>
+                    </td>
+                    <td>
+                        <%= m.jatek_id %>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+
+    <form>
+        <label for="szemszin">Szín keresése</label>
+        <input type="text" name="szemszin">
+        <button type="submit">Keresés</button>
+    </form>
+
+</body>
+
+</html>

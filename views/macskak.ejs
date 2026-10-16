@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macskák</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>id</th>
+            <th>Súly</th>
+            <th>Szem szín</th>
+            <th>Gazdi id</th>
+            <th>Játék id</th>
+        </thead>
+        <tbody>
+            <% for(const m of macskak) { %>
+                <tr>
+                    <td><%= m.id %></td>
+                    <td><%= m.suly %></td>
+                    <td><%= m.szem_szin %></td>
+                    <td><%= m.gazdi_id %></td>
+                    <td><%= m.jatek_id %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
