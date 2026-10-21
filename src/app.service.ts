@@ -7,7 +7,7 @@ const mySqlConnection = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
-  database: "macsa_db"
+  database: "macska_db"
 })
 
 @Injectable()
@@ -40,9 +40,20 @@ export class AppService {
   }
 
   async createJatek(nev: string) {
-    await mySqlConnection.execute(
+    if (!nev) {
+      throw new Error("Nem lehet üres név");
+    }
+
+    const [results] = await mySqlConnection.execute(
       "INSERT INTO jatekok(nev) VALUES (?)",
       [nev]
     )
+
+    const rows = results as any;
+
+    return {
+      id: rows.insertId,
+      nev
+    } as Jatek
   }
 }

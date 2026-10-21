@@ -11,5 +11,11 @@
         <input type="text" name="nev" required>
         <button type="submit">Felvétel</button>
     </form>
+    <% if (locals.success) { %>
+        <h3>Sikeres felvétel</h3>
+        <p>id: <%= jatek.id %>, név: <%= jatek.nev %></p>
+    <% } else { %>
+        <h3>Sikertelen felvétel</h3>
+    <% } %>
 </body>
 </html>
